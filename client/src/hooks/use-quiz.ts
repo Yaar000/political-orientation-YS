@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { QuizState, Question, QuizScreen } from '../types/quiz';
 import { questions } from '../lib/questions';
 import { Language } from '../types/quiz';
@@ -11,6 +11,22 @@ export function useQuiz(language: Language) {
     answers: [],
     isLoading: false
   });
+
+  // Reset quiz when language changes
+  useEffect(() => {
+    setQuizState(prev => {
+      if (prev.currentScreen !== 'welcome') {
+        return {
+          currentScreen: 'welcome',
+          currentQuestionIndex: 0,
+          selectedQuestions: [],
+          answers: [],
+          isLoading: false
+        };
+      }
+      return prev;
+    });
+  }, [language]);
 
   const selectRandomQuestions = useCallback((): Question[] => {
     const availableQuestions = [...questions[language]];

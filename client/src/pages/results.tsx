@@ -18,7 +18,7 @@ export function Results({ language, result, onRestart }: ResultsProps) {
 
   const handleShare = (platform: string) => {
     const url = window.location.href;
-    shareResult(platform, result.type, url);
+    shareResult(platform, result.type, url, language);
   };
 
   const handleCopyLink = async () => {

@@ -115,9 +115,10 @@ export const results: Record<Language, Record<number, PoliticalResult>> = {
 };
 
 export function calculatePoliticalOrientation(totalScore: number): number {
-  if (totalScore >= 24) return 1; // Progressive Liberal
-  if (totalScore >= 18) return 2; // Conservative Liberal
-  if (totalScore >= 12) return 3; // Progressive Authoritarian
-  if (totalScore >= 6) return 4; // Conservative Authoritarian
-  return 5; // Moderate
+  // Score ranges for 15 questions (0-30 total possible)
+  if (totalScore >= 24) return 1; // Progressive Liberal (80%+)
+  if (totalScore >= 18) return 2; // Conservative Liberal (60-79%)
+  if (totalScore >= 12) return 3; // Progressive Authoritarian (40-59%)
+  if (totalScore >= 6) return 4; // Conservative Authoritarian (20-39%)
+  return 5; // Moderate (0-19%)
 }
