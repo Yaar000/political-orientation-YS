@@ -96,6 +96,7 @@ Changelog:
 - June 24, 2025. Initial setup
 - June 24, 2025. Fixed Cloudflare Pages deployment issues: resolved terser error, created proper static build configuration, improved mobile text wrapping
 - June 24, 2025. Updated quiz from 15 to 20 questions for more comprehensive political orientation assessment
+- June 24, 2025. Critical fix: Corrected scoring algorithm that was incorrectly classifying conservative users as progressive. Updated score ranges for 20 questions and proper political orientation mapping
 
 ## User Preferences
 
