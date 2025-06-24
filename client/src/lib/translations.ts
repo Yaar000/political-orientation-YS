@@ -1,0 +1,61 @@
+import { Language } from '../types/quiz';
+
+export const translations: Record<Language, Record<string, string>> = {
+  ko: {
+    headerTitle: "정치 성향 테스트",
+    welcomeTitle: "정치 성향 테스트",
+    welcomeDescription: "15개의 간단한 질문으로 당신의 정치적 성향을 알아보세요.<br>질문은 매번 다르게 출제되며, 청소년도 쉽게 이해할 수 있습니다.",
+    durationText: "소요 시간: 약 3-5분",
+    randomText: "매번 다른 질문 15개",
+    shareText: "결과 공유 가능",
+    startText: "테스트 시작하기",
+    progressText: "진행률",
+    loadingTitle: "결과 분석 중...",
+    loadingDescription: "당신의 정치적 성향을 분석하고 있습니다.",
+    resultTitle: "당신의 정치 성향",
+    characteristicsTitle: "주요 특징",
+    valuesTitle: "중요 가치",
+    shareTitle: "결과 공유하기",
+    copyText: "링크 복사",
+    restartText: "다시 테스트하기",
+    copied: "복사됨!"
+  },
+  en: {
+    headerTitle: "Political Orientation Quiz",
+    welcomeTitle: "Political Orientation Quiz",
+    welcomeDescription: "Discover your political orientation with 15 simple questions.<br>Questions are randomly selected each time and easy to understand for everyone.",
+    durationText: "Duration: About 3-5 minutes",
+    randomText: "15 different questions each time",
+    shareText: "Shareable results",
+    startText: "Start Quiz",
+    progressText: "Progress",
+    loadingTitle: "Analyzing Results...",
+    loadingDescription: "We're analyzing your political orientation.",
+    resultTitle: "Your Political Orientation",
+    characteristicsTitle: "Key Characteristics",
+    valuesTitle: "Important Values",
+    shareTitle: "Share Your Results",
+    copyText: "Copy Link",
+    restartText: "Take Quiz Again",
+    copied: "Copied!"
+  },
+  ja: {
+    headerTitle: "政治傾向テスト",
+    welcomeTitle: "政治傾向テスト",
+    welcomeDescription: "15の簡単な質問であなたの政治的傾向を調べてみましょう。<br>質問は毎回異なり、誰でも理解しやすいものです。",
+    durationText: "所要時間：約3-5分",
+    randomText: "毎回異なる15の質問",
+    shareText: "結果共有可能",
+    startText: "テスト開始",
+    progressText: "進捗",
+    loadingTitle: "結果分析中...",
+    loadingDescription: "あなたの政治的傾向を分析しています。",
+    resultTitle: "あなたの政治傾向",
+    characteristicsTitle: "主な特徴",
+    valuesTitle: "重要な価値",
+    shareTitle: "結果を共有",
+    copyText: "リンクコピー",
+    restartText: "再テスト",
+    copied: "コピーしました！"
+  }
+};
