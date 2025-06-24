@@ -10,8 +10,6 @@ export function useLanguage() {
   const changeLanguage = (newLanguage: Language) => {
     setLanguage(newLanguage);
     localStorage.setItem('preferred-language', newLanguage);
-    
-    // Force immediate re-render by updating document language
     document.documentElement.lang = newLanguage;
   };
 

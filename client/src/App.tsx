@@ -62,12 +62,14 @@ function App() {
   };
 
   return (
-    <TooltipProvider>
+    <TooltipProvider key={`app-${language}`}>
       <div className="min-h-screen bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-slate-200 transition-colors duration-300">
         <Header />
         
         <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {renderCurrentScreen()}
+          <div key={language}>
+            {renderCurrentScreen()}
+          </div>
         </main>
         
         <Toaster />
