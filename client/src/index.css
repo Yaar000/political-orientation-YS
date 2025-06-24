@@ -5,15 +5,15 @@
 /* Text wrapping utilities for better overflow handling */
 .break-words-enhanced {
   word-wrap: break-word;
-  word-break: break-word;
   overflow-wrap: break-word;
   hyphens: auto;
 }
 
-/* Ensure CJK text breaks properly */
+/* Ensure CJK text breaks properly without being too aggressive */
 .break-cjk {
-  word-break: break-all;
-  line-break: anywhere;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: auto;
 }
 
 :root {
