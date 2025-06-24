@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Language } from '../types/quiz';
 
 export function useLanguage() {
@@ -10,6 +10,9 @@ export function useLanguage() {
   const changeLanguage = (newLanguage: Language) => {
     setLanguage(newLanguage);
     localStorage.setItem('preferred-language', newLanguage);
+    
+    // Force immediate re-render by updating document language
+    document.documentElement.lang = newLanguage;
   };
 
   return { language, changeLanguage };

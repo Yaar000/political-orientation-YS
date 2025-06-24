@@ -12,9 +12,10 @@ export function useQuiz(language: Language) {
     isLoading: false
   });
 
-  // Reset quiz when language changes
+  // Reset quiz when language changes, but only if not on welcome screen
   useEffect(() => {
     setQuizState(prev => {
+      // Only reset if user is in the middle of quiz or on results
       if (prev.currentScreen !== 'welcome') {
         return {
           currentScreen: 'welcome',
@@ -24,7 +25,8 @@ export function useQuiz(language: Language) {
           isLoading: false
         };
       }
-      return prev;
+      // If already on welcome screen, just trigger re-render
+      return { ...prev };
     });
   }, [language]);
 
