@@ -19,7 +19,7 @@ cp _redirects dist-static/
 echo "✅ Build complete! Deploy the 'dist-static' folder to Cloudflare Pages."
 echo ""
 echo "📋 Cloudflare Pages Settings:"
-echo "  Build command: npx vite build --config vite.config.cloudflare.ts"
+echo "  Build command: npm install && npx vite build --config vite.config.cloudflare.ts"
 echo "  Build output directory: dist-static"
 echo "  Root directory: /"
 echo ""

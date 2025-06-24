@@ -94,6 +94,7 @@ This is a full-stack political orientation quiz application built with React fro
 
 Changelog:
 - June 24, 2025. Initial setup
+- June 24, 2025. Fixed Cloudflare Pages deployment issues: resolved terser error, created proper static build configuration, improved mobile text wrapping
 
 ## User Preferences
 

@@ -1,0 +1,48 @@
+2025-06-24T05:30:08.444559Z	Cloning repository...
+2025-06-24T05:30:09.070235Z	From https://github.com/Yaar000/political-orientation-YS
+2025-06-24T05:30:09.071084Z	 * branch            5c98c3553da7cddd229c5ffc4b59fcd443dd1aa2 -> FETCH_HEAD
+2025-06-24T05:30:09.071294Z	
+2025-06-24T05:30:09.101813Z	HEAD is now at 5c98c35 Ensure the application loads correctly when deployed on Cloudflare Pages
+2025-06-24T05:30:09.102234Z	
+2025-06-24T05:30:09.1804Z	
+2025-06-24T05:30:09.180836Z	Using v2 root directory strategy
+2025-06-24T05:30:09.203476Z	Success: Finished cloning repository files
+2025-06-24T05:30:10.859055Z	Checking for configuration in a Wrangler configuration file (BETA)
+2025-06-24T05:30:10.859843Z	
+2025-06-24T05:30:11.954596Z	No wrangler.toml file found. Continuing.
+2025-06-24T05:30:12.025665Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2025-06-24T05:30:12.026238Z	Installing project dependencies: npm clean-install --progress=false
+2025-06-24T05:30:16.168989Z	npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+2025-06-24T05:30:16.170728Z	npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+2025-06-24T05:30:20.847893Z	
+2025-06-24T05:30:20.848458Z	added 481 packages, and audited 482 packages in 8s
+2025-06-24T05:30:20.848868Z	
+2025-06-24T05:30:20.849031Z	64 packages are looking for funding
+2025-06-24T05:30:20.849157Z	  run `npm fund` for details
+2025-06-24T05:30:20.87844Z	
+2025-06-24T05:30:20.878689Z	9 vulnerabilities (1 low, 8 moderate)
+2025-06-24T05:30:20.878871Z	
+2025-06-24T05:30:20.879011Z	To address issues that do not require attention, run:
+2025-06-24T05:30:20.879221Z	  npm audit fix
+2025-06-24T05:30:20.879316Z	
+2025-06-24T05:30:20.879481Z	To address all issues (including breaking changes), run:
+2025-06-24T05:30:20.879563Z	  npm audit fix --force
+2025-06-24T05:30:20.879648Z	
+2025-06-24T05:30:20.87979Z	Run `npm audit` for details.
+2025-06-24T05:30:20.908162Z	Executing user command: npx vite build --config vite.config.cloudflare.ts
+2025-06-24T05:30:21.81853Z	[36mvite v5.4.19 [32mbuilding for production...[36m[39m
+2025-06-24T05:30:21.872715Z	transforming...
+2025-06-24T05:30:22.146344Z	Browserslist: browsers data (caniuse-lite) is 8 months old. Please run:
+2025-06-24T05:30:22.14658Z	  npx update-browserslist-db@latest
+2025-06-24T05:30:22.146978Z	  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2025-06-24T05:30:25.517889Z	[32m✓[39m 2021 modules transformed.
+2025-06-24T05:30:25.702609Z	[31mx[39m Build failed in 3.86s
+2025-06-24T05:30:25.703035Z	[31merror during build:
+2025-06-24T05:30:25.703277Z	[31m[vite:terser] terser not found. Since Vite v3, terser has become an optional dependency. You need to install it.[31m
+2025-06-24T05:30:25.703416Z	    at loadTerserPath (file:///opt/buildhome/repo/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:19705:13)
+2025-06-24T05:30:25.70354Z	    at Object.renderChunk (file:///opt/buildhome/repo/node_modules/vite/dist/node/chunks/dep-C6uTJdX2.js:19740:27)
+2025-06-24T05:30:25.703651Z	    at file:///opt/buildhome/repo/node_modules/rollup/dist/es/shared/node-entry.js:20789:40
+2025-06-24T05:30:25.703774Z	    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)[39m
+2025-06-24T05:30:25.734815Z	Failed: Error while executing user command. Exited with error code: 1
+2025-06-24T05:30:25.745765Z	Failed: build command exited with code: 1
+2025-06-24T05:30:26.668503Z	Failed: error occurred while running build command

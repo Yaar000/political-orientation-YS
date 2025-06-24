@@ -11,7 +11,6 @@ export default defineConfig({
     alias: {
       "@": path.resolve(__dirname, "client", "src"),
       "@shared": path.resolve(__dirname, "shared"),
-      "@assets": path.resolve(__dirname, "attached_assets"),
     },
   },
   root: path.resolve(__dirname, "client"),
@@ -19,15 +18,11 @@ export default defineConfig({
     outDir: path.resolve(__dirname, "dist-static"),
     emptyOutDir: true,
     sourcemap: false,
-    minify: 'esbuild',
-    chunkSizeWarningLimit: 1000,
+    minify: false, // Disable minification for faster builds
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          motion: ['framer-motion'],
-          radix: ['@radix-ui/react-dialog', '@radix-ui/react-select', '@radix-ui/react-tooltip'],
-        }
+        // Disable code splitting for simpler deployment
+        manualChunks: undefined,
       }
     }
   },
@@ -35,8 +30,5 @@ export default defineConfig({
   define: {
     global: 'globalThis',
     'process.env.NODE_ENV': '"production"'
-  },
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'framer-motion']
   }
 });
