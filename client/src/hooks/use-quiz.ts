@@ -27,7 +27,7 @@ export function useQuiz(language: Language) {
     const availableQuestions = [...questions[language]];
     const selected: Question[] = [];
     
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 20; i++) {
       const randomIndex = Math.floor(Math.random() * availableQuestions.length);
       selected.push(availableQuestions[randomIndex]);
       availableQuestions.splice(randomIndex, 1);
@@ -105,7 +105,7 @@ export function useQuiz(language: Language) {
   }, [quizState.answers]);
 
   const getProgress = useCallback(() => {
-    return ((quizState.currentQuestionIndex + 1) / 15) * 100;
+    return ((quizState.currentQuestionIndex + 1) / 20) * 100;
   }, [quizState.currentQuestionIndex]);
 
   return {

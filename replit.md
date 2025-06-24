@@ -32,7 +32,7 @@ This is a full-stack political orientation quiz application built with React fro
 
 ### Quiz System
 - **Question Pool**: Large collection of political orientation questions in multiple languages
-- **Random Selection**: 15 questions randomly selected from the pool each session
+- **Random Selection**: 20 questions randomly selected from the pool each session
 - **Scoring System**: Numerical scoring with political orientation calculation
 - **Results Engine**: Categorizes users into political orientation types with detailed descriptions
 
@@ -95,6 +95,7 @@ This is a full-stack political orientation quiz application built with React fro
 Changelog:
 - June 24, 2025. Initial setup
 - June 24, 2025. Fixed Cloudflare Pages deployment issues: resolved terser error, created proper static build configuration, improved mobile text wrapping
+- June 24, 2025. Updated quiz from 15 to 20 questions for more comprehensive political orientation assessment
 
 ## User Preferences
 
