@@ -12,22 +12,15 @@ export function useQuiz(language: Language) {
     isLoading: false
   });
 
-  // Reset quiz when language changes, but only if not on welcome screen
+  // Force complete state reset when language changes to trigger re-render
   useEffect(() => {
-    setQuizState(prev => {
-      // Only reset if user is in the middle of quiz or on results
-      if (prev.currentScreen !== 'welcome') {
-        return {
-          currentScreen: 'welcome',
-          currentQuestionIndex: 0,
-          selectedQuestions: [],
-          answers: [],
-          isLoading: false
-        };
-      }
-      // If already on welcome screen, just trigger re-render
-      return { ...prev };
-    });
+    setQuizState(prev => ({
+      currentScreen: 'welcome',
+      currentQuestionIndex: 0,
+      selectedQuestions: [],
+      answers: [],
+      isLoading: false
+    }));
   }, [language]);
 
   const selectRandomQuestions = useCallback((): Question[] => {

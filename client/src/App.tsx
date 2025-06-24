@@ -8,9 +8,17 @@ import { useQuiz } from './hooks/use-quiz';
 import { results, calculatePoliticalOrientation } from './lib/results';
 import { Toaster } from './components/ui/toaster';
 import { TooltipProvider } from './components/ui/tooltip';
+import { useState, useEffect } from 'react';
 
 function App() {
   const { language } = useLanguage();
+  const [forceRender, setForceRender] = useState(0);
+  
+  // Force re-render when language changes
+  useEffect(() => {
+    setForceRender(prev => prev + 1);
+  }, [language]);
+  
   const { 
     quizState, 
     startQuiz, 
@@ -62,12 +70,12 @@ function App() {
   };
 
   return (
-    <TooltipProvider key={`app-${language}`}>
-      <div className="min-h-screen bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-slate-200 transition-colors duration-300">
+    <TooltipProvider key={`tooltip-${language}-${forceRender}`}>
+      <div key={`app-${language}-${forceRender}`} className="min-h-screen bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-slate-200 transition-colors duration-300">
         <Header />
         
         <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div key={language}>
+          <div key={`content-${language}-${forceRender}`}>
             {renderCurrentScreen()}
           </div>
         </main>
