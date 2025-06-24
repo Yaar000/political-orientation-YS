@@ -34,7 +34,7 @@ function App() {
             language={language}
             currentQuestion={currentQuestion}
             currentQuestionIndex={quizState.currentQuestionIndex}
-            totalQuestions={15}
+            totalQuestions={quizState.selectedQuestions.length}
             progress={getProgress()}
             onAnswer={selectAnswer}
             onBack={goBack}

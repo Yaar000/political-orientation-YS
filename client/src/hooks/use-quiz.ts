@@ -36,13 +36,11 @@ export function useQuiz(language: Language) {
       availableQuestions.splice(randomIndex, 1);
     }
     
-    console.log(`Selected ${selected.length} questions for language ${language}`);
     return selected;
   }, [language]);
 
   const startQuiz = useCallback(() => {
     const selectedQuestions = selectRandomQuestions();
-    console.log(`Starting quiz with ${selectedQuestions.length} questions`);
     setQuizState({
       currentScreen: 'quiz',
       currentQuestionIndex: 0,
