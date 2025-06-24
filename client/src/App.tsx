@@ -67,8 +67,10 @@ function App() {
       <div className="min-h-screen bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-slate-200 transition-colors duration-300">
         <Header />
         
-        <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {renderCurrentScreen()}
+        <main className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-8 py-4 sm:py-8 w-full">
+          <div className="w-full max-w-full">
+            {renderCurrentScreen()}
+          </div>
         </main>
         
         <Toaster />

@@ -7,13 +7,28 @@
   word-wrap: break-word;
   overflow-wrap: break-word;
   hyphens: auto;
+  white-space: pre-wrap;
 }
 
-/* Ensure CJK text breaks properly without being too aggressive */
+/* Ensure CJK text breaks properly - mobile-friendly */
 .break-cjk {
   word-break: keep-all;
   overflow-wrap: break-word;
   line-break: auto;
+}
+
+/* Mobile-specific text handling */
+@media (max-width: 640px) {
+  .break-words-enhanced {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+  
+  .break-cjk {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
 }
 
 :root {
