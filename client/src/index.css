@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Text wrapping utilities for better overflow handling */
+.break-words-enhanced {
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Ensure CJK text breaks properly */
+.break-cjk {
+  word-break: break-all;
+  line-break: anywhere;
+}
+
 :root {
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(20, 14.3%, 4.1%);
