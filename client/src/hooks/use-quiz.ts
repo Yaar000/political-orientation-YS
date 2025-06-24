@@ -27,17 +27,22 @@ export function useQuiz(language: Language) {
     const availableQuestions = [...questions[language]];
     const selected: Question[] = [];
     
-    for (let i = 0; i < 20; i++) {
+    // Ensure we have enough questions
+    const questionCount = Math.min(20, availableQuestions.length);
+    
+    for (let i = 0; i < questionCount; i++) {
       const randomIndex = Math.floor(Math.random() * availableQuestions.length);
       selected.push(availableQuestions[randomIndex]);
       availableQuestions.splice(randomIndex, 1);
     }
     
+    console.log(`Selected ${selected.length} questions for language ${language}`);
     return selected;
   }, [language]);
 
   const startQuiz = useCallback(() => {
     const selectedQuestions = selectRandomQuestions();
+    console.log(`Starting quiz with ${selectedQuestions.length} questions`);
     setQuizState({
       currentScreen: 'quiz',
       currentQuestionIndex: 0,
@@ -105,8 +110,9 @@ export function useQuiz(language: Language) {
   }, [quizState.answers]);
 
   const getProgress = useCallback(() => {
-    return ((quizState.currentQuestionIndex + 1) / 20) * 100;
-  }, [quizState.currentQuestionIndex]);
+    const totalQuestions = quizState.selectedQuestions.length;
+    return totalQuestions > 0 ? ((quizState.currentQuestionIndex + 1) / totalQuestions) * 100 : 0;
+  }, [quizState.currentQuestionIndex, quizState.selectedQuestions.length]);
 
   return {
     quizState,
